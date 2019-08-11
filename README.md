@@ -1,4 +1,8 @@
 # SpotMe
+![SpotMe](PlaylistPage.jpg)
+![SpotMe](LoginPage.jpg)
+
+
 Just a sample database for my project
 ````
 --Project Step 5
