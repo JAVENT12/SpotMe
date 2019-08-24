@@ -1,7 +1,7 @@
 # SpotMe
 ![SpotMe](PlaylistPage.jpg)
 ![SpotMe](LoginPage.jpg)
-
+![SpotMe](RTM&TestPlanning.jpg)
 
 Just a sample database for my project
 ````
