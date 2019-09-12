@@ -1,11 +1,11 @@
-![SpotMe](Login(1).JPG)
-![SpotMe](FAQ.JPG)
-
 ![SpotMe](ProjectERD(1).JPG)
-![SpotMe](PlaylistPage.jpg)
-![SpotMe](LoginPage.jpg)
 ![SpotMe](RTM&TestPlanning.JPG)
 
+![SpotMe](PlaylistPage.jpg)
+![SpotMe](LoginPage.jpg)
+
+![SpotMe](Login(1).JPG)
+![SpotMe](FAQ.JPG)
 Just a sample database for my project
 ````
 --Project Step 5
