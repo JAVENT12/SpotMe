@@ -1,4 +1,5 @@
 ![SpotMe](Login(1).JPG)
+![SpotMe](FAQ.JPG)
 
 ![SpotMe](ProjectERD(1).JPG)
 ![SpotMe](PlaylistPage.jpg)
