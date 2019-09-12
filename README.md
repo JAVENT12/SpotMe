@@ -1,8 +1,6 @@
-##Table of Contents
-1. Wireframe 
-
-# SpotMe
-# ![SpotMe](PlaylistPage.jpg)
+ 
+![SpotMe](ProjectERD.jpg)
+![SpotMe](PlaylistPage.jpg)
 ![SpotMe](LoginPage.jpg)
 ![SpotMe](RTM&TestPlanning.JPG)
 
