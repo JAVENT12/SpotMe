@@ -1,4 +1,6 @@
 # Spotme
+add description of project here!
+
 
 ## ERD
 ![SpotMe](ProjectERD(1).JPG)
