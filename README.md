@@ -3,9 +3,10 @@
 ## ERD
 ![SpotMe](ProjectERD(1).JPG)
 
-##Requirements
+## Requirements
 ![SpotMe](RTM&TestPlanning.JPG)
 
+## Wireframes
 ![SpotMe](PlaylistPage.jpg)
 ![SpotMe](LoginPage.jpg)
 
