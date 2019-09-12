@@ -1,5 +1,5 @@
  
-![SpotMe](ProjectERD(1).jpg)
+![SpotMe](ProjectERD(1).JPG)
 ![SpotMe](PlaylistPage.jpg)
 ![SpotMe](LoginPage.jpg)
 ![SpotMe](RTM&TestPlanning.JPG)
