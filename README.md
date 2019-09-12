@@ -1,4 +1,4 @@
-# Spotme
+# SpotMe
 SpotMe will be an exercise application. Where users can select their workouts, and share routines with each other.
 
 
