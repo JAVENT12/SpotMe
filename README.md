@@ -1,11 +1,11 @@
 # SpotMe
 SpotMe will be an exercise application. Where users can select their workouts, and share routines with each other.
 # Table of Contents
-#1. ERD
-#2. Requirements
-#3. Wireframes
-#4. Views
-#5. Database
+1. ERD
+2. Requirements
+3. Wireframes
+4. Views
+5. Database
 
 
 ## ERD
