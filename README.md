@@ -1,4 +1,9 @@
+# Spotme
+
+## ERD
 ![SpotMe](ProjectERD(1).JPG)
+
+##Requirements
 ![SpotMe](RTM&TestPlanning.JPG)
 
 ![SpotMe](PlaylistPage.jpg)
