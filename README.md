@@ -1,5 +1,5 @@
 # Spotme
-add description of project here!
+SpotMe will be an exercise application. Where users can select their workouts, and share routines with each other.
 
 
 ## ERD
@@ -12,8 +12,11 @@ add description of project here!
 ![SpotMe](PlaylistPage.jpg)
 ![SpotMe](LoginPage.jpg)
 
+## Views
 ![SpotMe](Login(1).JPG)
 ![SpotMe](FAQ.JPG)
+
+## Database
 Just a sample database for my project
 ````
 --Project Step 5
