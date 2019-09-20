@@ -9,7 +9,7 @@ SpotMe will be an exercise application. Where users can select their workouts, a
 
 
 ## ERD
-![SpotMe](ProjectERD(1).JPG)
+![SpotMe](ERD(New1).jpg)
 
 ## Requirements
 ![SpotMe](RTM&TestPlanning.JPG)
