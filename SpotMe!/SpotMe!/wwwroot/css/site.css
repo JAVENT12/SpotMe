@@ -64,7 +64,7 @@ html {
     background-image: url('c:\users\jason ventura\source\repos\spotme!\spotme!\wwwroot\images\bodybuilding-close-up-dumbbells-260352.jpg');
 }
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   white-space: nowrap;

@@ -13,7 +13,7 @@ namespace SpotMe_.Models
         {
             public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
            : base(options) { }
-            public DbSet<Excerciser> Excercisers { get; set; }
+            public DbSet<Excerciser> Excerciser { get; set; }
         }
 
 }

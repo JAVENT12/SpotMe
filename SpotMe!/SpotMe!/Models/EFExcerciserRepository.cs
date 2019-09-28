@@ -13,6 +13,8 @@ namespace SpotMe_.Models
         {
             context = ctx;
         }
-        public IQueryable<Excerciser> Excercisers => context.Excercisers;
+        public IQueryable<Excerciser> Excercisers => context.Excerciser;
+    
+       
     }
 }

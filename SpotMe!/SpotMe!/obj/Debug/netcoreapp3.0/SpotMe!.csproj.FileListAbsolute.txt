@@ -110,9 +110,11 @@ C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Spot
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\SpotMe!.TagHelpers.input.cache
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\SpotMe!.TagHelpers.output.cache
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\SpotMe!.RazorCoreGenerate.cache
+C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Home\Create.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Home\Help.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Home\LogIn.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Home\MuscleGroup.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Home\Signup.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -125,8 +127,3 @@ C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Spot
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\SpotMe!.dll
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\SpotMe!.pdb
 C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\SpotMe!.csprojAssemblyReference.cache
-C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Excercisers\Create.cshtml.g.cs
-C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Excercisers\Delete.cshtml.g.cs
-C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Excercisers\Details.cshtml.g.cs
-C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Excercisers\Edit.cshtml.g.cs
-C:\Users\Jason Ventura\source\repos\SpotMe!\SpotMe!\obj\Debug\netcoreapp3.0\Razor\Views\Excercisers\Index.cshtml.g.cs
