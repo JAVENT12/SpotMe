@@ -3,10 +3,11 @@ SpotMe will be an exercise application. Where users can select their workouts, a
 # Table of Contents
 1. [ERD](https://github.com/JAVENT12/SpotMe#erd)
 2. [Diagram](https://github.com/JAVENT12/SpotMe#diagram)
-2. [Requirements](https://github.com/JAVENT12/SpotMe#requirements)
-3. [Wireframes](https://github.com/JAVENT12/SpotMe#wireframes)
-4. [Views](https://github.com/JAVENT12/SpotMe#views)
-5. [Database](https://github.com/JAVENT12/SpotMe#database)
+3. [Requirements](https://github.com/JAVENT12/SpotMe#requirements)
+4. [TestCases](https://github.com/JAVENT12/SpotMe#testcases)
+5. [Wireframes](https://github.com/JAVENT12/SpotMe#wireframes)
+6. [Views](https://github.com/JAVENT12/SpotMe#views)
+7. [Database](https://github.com/JAVENT12/SpotMe#database)
 
 
 ## ERD
@@ -18,16 +19,22 @@ SpotMe will be an exercise application. Where users can select their workouts, a
 ## Requirements
 ![SpotMe](RTM&TestPlanning.JPG)
 
+## TestCases
+Test Case 1
+![SpotMe](TC1R1-1.JPG)
+![SpotMe](TC1R1-2.JPG)
+![SpotMe](TC1R1-3.JPG)
+![SpotMe](TC1R1-4.JPG)
 ## Wireframes
 ![SpotMe](PlaylistPage.jpg)
 ![SpotMe](LoginPage.jpg)
 
 ## Views
-![SpotMe](Login(1).JPG)
+![SpotMe](SignUp.JPG)
 ![SpotMe](FAQ.JPG)
 
 ## Database
-Just a sample database for my project
+
 ````
 --Project Step 5
 
