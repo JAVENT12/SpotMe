@@ -64,21 +64,27 @@ namespace SpotMe_.Controllers
             
         }
 
-        private string Getmd5Hash(MD5 md5Hash, string userPassword)
-        {
-            throw new NotImplementedException();
-        }
+
 
         [HttpGet]
         public ViewResult Create() => View();
         [HttpPost]
         public ViewResult Create(Excerciser excerciser)
         {
-            string password = excerciser.userPassword; 
-            excerciser.userPassword = Encrypt.CreateMD5(password);
-            _context.Excerciser.Add(excerciser);
-            _context.SaveChanges();
-            return View();
+            try
+            {
+                string password = excerciser.userPassword;
+                excerciser.userPassword = Encrypt.CreateMD5(password);
+                _context.Excerciser.Add(excerciser);
+                _context.SaveChanges();
+                return View("MuscleGroup");
+            }
+            catch (Exception) // No duplicate accounts in database!
+            {
+        
+                return Create();
+            }
+
         }
         public ViewResult MuscleGroup()
         {
