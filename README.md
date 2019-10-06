@@ -2,7 +2,7 @@
 SpotMe will be an exercise application. Where users can select their workouts, and share routines with each other.
 # Table of Contents
 1. [ERD](https://github.com/JAVENT12/SpotMe#erd)
-2. [Diagram](https://github.com/JAVENT12/SpotMe#diagram)
+2. [Diagrams](https://github.com/JAVENT12/SpotMe#diagram)
 3. [Requirements](https://github.com/JAVENT12/SpotMe#requirements)
 4. [TestCases](https://github.com/JAVENT12/SpotMe#testcases)
 5. [Wireframes](https://github.com/JAVENT12/SpotMe#wireframes)
@@ -15,23 +15,24 @@ SpotMe will be an exercise application. Where users can select their workouts, a
 
 ## Diagram
 ![SpotMe](SpotMeDiagram(1).JPG)
+![SpotMe](SpotIdentityDiagram(1).JPG))
+
 
 ## Requirements
-![SpotMe](RTM(TC1R1).JPG)
+![SpotMe](RTM&TestPlanning(TC1).JPG))
 
 ## TestCases
 Test Case 1
-![SpotMe](TC1R1-1.JPG)
 ![SpotMe](TC1R1-2.JPG)
-![SpotMe](TC1R1-3.JPG)
-![SpotMe](TC1R1-4.JPG)
+![SpotMe](ViewRoles.JPG)
+
 ## Wireframes
 ![SpotMe](PlaylistPage.jpg)
 ![SpotMe](LoginPage.jpg)
 
 ## Views
-![SpotMe](SignUp.JPG)
-![SpotMe](FAQ.JPG)
+![SpotMe](SignUp(1).JPG)
+![SpotMe](Login(2).JPG)
 
 ## Database
 
