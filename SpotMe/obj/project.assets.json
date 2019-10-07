@@ -14603,11 +14603,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jason Ventura\\Documents\\School\\MSSA\\Assignments\\ISTA 421\\Project\\SpotMe\\Identity.csproj",
+      "projectUniqueName": "C:\\Users\\Jason Ventura\\source\\repos\\SpotMe\\Identity.csproj",
       "projectName": "Identity",
-      "projectPath": "C:\\Users\\Jason Ventura\\Documents\\School\\MSSA\\Assignments\\ISTA 421\\Project\\SpotMe\\Identity.csproj",
+      "projectPath": "C:\\Users\\Jason Ventura\\source\\repos\\SpotMe\\Identity.csproj",
       "packagesPath": "C:\\Users\\Jason Ventura\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jason Ventura\\Documents\\School\\MSSA\\Assignments\\ISTA 421\\Project\\SpotMe\\obj\\",
+      "outputPath": "C:\\Users\\Jason Ventura\\source\\repos\\SpotMe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

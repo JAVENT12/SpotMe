@@ -113,3 +113,43 @@ C:\Users\Jason Ventura\Documents\School\MSSA\Assignments\ISTA 421\Project\SpotMe
 C:\Users\Jason Ventura\Documents\School\MSSA\Assignments\ISTA 421\Project\SpotMe\obj\Debug\netcoreapp2.2\Identity.dll
 C:\Users\Jason Ventura\Documents\School\MSSA\Assignments\ISTA 421\Project\SpotMe\obj\Debug\netcoreapp2.2\Identity.pdb
 C:\Users\Jason Ventura\Documents\School\MSSA\Assignments\ISTA 421\Project\SpotMe\obj\Debug\netcoreapp2.2\Identity.csproj.CopyComplete
+C:\Users\Jason Ventura\source\repos\SpotMe\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\Jason Ventura\source\repos\SpotMe\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\Jason Ventura\source\repos\SpotMe\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Users\Jason Ventura\source\repos\SpotMe\bin\Debug\netcoreapp2.2\Identity.deps.json
+C:\Users\Jason Ventura\source\repos\SpotMe\bin\Debug\netcoreapp2.2\Identity.runtimeconfig.json
+C:\Users\Jason Ventura\source\repos\SpotMe\bin\Debug\netcoreapp2.2\Identity.runtimeconfig.dev.json
+C:\Users\Jason Ventura\source\repos\SpotMe\bin\Debug\netcoreapp2.2\Identity.dll
+C:\Users\Jason Ventura\source\repos\SpotMe\bin\Debug\netcoreapp2.2\Identity.pdb
+C:\Users\Jason Ventura\source\repos\SpotMe\bin\Debug\netcoreapp2.2\Identity.Views.dll
+C:\Users\Jason Ventura\source\repos\SpotMe\bin\Debug\netcoreapp2.2\Identity.Views.pdb
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.RazorAssemblyInfo.cache
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.RazorAssemblyInfo.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.AssemblyInfoInputs.cache
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.AssemblyInfo.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.TagHelpers.input.cache
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.TagHelpers.output.cache
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.RazorCoreGenerate.cache
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Account\AccessDenied.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Create.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Edit.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Home\Faq.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Home\Routines.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Home\SignUp.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Home\Workouts.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\RoleAdmin\Create.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\RoleAdmin\Edit.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\RoleAdmin\Index.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.RazorTargetAssemblyInfo.cache
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.RazorTargetAssemblyInfo.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.Views.pdb
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.dll
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.pdb
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.csproj.CopyComplete
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.csprojAssemblyReference.cache

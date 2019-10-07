@@ -14,7 +14,7 @@ namespace Identity.Models
         public int routineID { get; set; }
         [Key]
         [ForeignKey("Excerciser")]
-        public int excerciserID { get; set; }
+        public int ID { get; set; }
         [Key]
         [ForeignKey("WorkOuts")]
         public int WorkOutsID { get; set; }

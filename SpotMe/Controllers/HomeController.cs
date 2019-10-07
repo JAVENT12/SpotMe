@@ -7,25 +7,31 @@ using Microsoft.AspNetCore.Mvc;
 using Identity.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Identity.Infrastructure;
 
 namespace Identity.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext _context;
+        private IExcerciserRepository repository;
 
         private UserManager<AppUser> userManager;
         private IUserValidator<AppUser> userValidator;
         private IPasswordValidator<AppUser> passwordValidator;
         private IPasswordHasher<AppUser> passwordHasher;
+
         public HomeController(UserManager<AppUser> usrMgr,
         IUserValidator<AppUser> userValid,
         IPasswordValidator<AppUser> passValid,
-        IPasswordHasher<AppUser> passwordHash)
+        IPasswordHasher<AppUser> passwordHash, IExcerciserRepository repo, ApplicationDbContext context)
         {
             userManager = usrMgr;
             userValidator = userValid;
             passwordValidator = passValid;
             passwordHasher = passwordHash;
+            repository = repo;
+            _context = context;
         }
 
 
@@ -50,9 +56,11 @@ namespace Identity.Controllers
             ["Auth Type"] = HttpContext.User.Identity.AuthenticationType,
             ["In Users Role"] = HttpContext.User.IsInRole("Users")
         };
+        [HttpGet]
         public ViewResult SignUp() => View();
+
         [HttpPost]
-        public async Task<IActionResult> SignUp(CreateModel model)
+        public async Task<IActionResult> SignUp(CreateModel model, Excerciser excerciser)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +69,18 @@ namespace Identity.Controllers
                     UserName = model.Name,
                     Email = model.Email
                 };
+
+
+                excerciser.UserName = model.Name;
+                excerciser.Email = model.Email;
+                string newPassWord = model.Password;
+                excerciser.userPassword = Encrypt.CreateMD5(newPassWord);
+                
+
+
+
+                _context.Excerciser.Add(excerciser);
+                _context.SaveChanges();
                 IdentityResult result
                 = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

@@ -32,6 +32,13 @@ namespace Identity
 
             services.AddDbContext<AppIdentityDbContext>(options =>
              options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=SpotIdentity;Trusted_Connection=True;MultipleActiveResultSets=true"));
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=SpotMe;Trusted_Connection=True;MultipleActiveResultSets=true"));
+            services.AddTransient<IExcerciserRepository, EFExcerciserRepository>();
+
+
+
             //options.UseSqlServer(Configuration["Data:SportStoreIdentity:ConnectionString"]));
 
             services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Users/Login");
