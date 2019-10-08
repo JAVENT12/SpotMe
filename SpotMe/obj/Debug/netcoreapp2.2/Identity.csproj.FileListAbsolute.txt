@@ -134,12 +134,13 @@ C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\A
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Create.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Edit.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Admin\HandleSpotMe.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Index.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Home\Faq.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Home\Routines.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Home\SignUp.cshtml.g.cs
-C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Home\Workouts.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\MuscleGroup\Index.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\RoleAdmin\Create.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\RoleAdmin\Edit.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\RoleAdmin\Index.cshtml.g.cs
@@ -153,3 +154,5 @@ C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.dll
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.pdb
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.csproj.CopyComplete
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Identity.csprojAssemblyReference.cache
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\MuscleGroup\Create.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\MuscleGroup\HandleMuscle.cshtml.g.cs

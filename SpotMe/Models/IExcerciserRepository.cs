@@ -8,5 +8,6 @@ namespace Identity.Models
     public interface IExcerciserRepository
     {
         IQueryable<Excerciser> Excercisers { get; }
+        Excerciser DeleteExcerciser(int ID);
     }
 }

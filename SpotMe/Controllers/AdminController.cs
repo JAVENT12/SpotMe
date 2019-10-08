@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Identity.Models;
 using Microsoft.AspNetCore.Authorization;
+using Identity.Infrastructure;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,21 +20,28 @@ namespace Identity.Controllers
         private IUserValidator<AppUser> userValidator;
         private IPasswordValidator<AppUser> passwordValidator;
         private IPasswordHasher<AppUser> passwordHasher;
+
+        private ApplicationDbContext _context;
+        private IExcerciserRepository repository;
+
+
         public AdminController(UserManager<AppUser> usrMgr,
         IUserValidator<AppUser> userValid,
         IPasswordValidator<AppUser> passValid,
-        IPasswordHasher<AppUser> passwordHash)
+        IPasswordHasher<AppUser> passwordHash, IExcerciserRepository repo, ApplicationDbContext context)
         {
             userManager = usrMgr;
             userValidator = userValid;
             passwordValidator = passValid;
             passwordHasher = passwordHash;
+            repository = repo;
+            _context = context;
         }
 
         public ViewResult Index() => View(userManager.Users);
         public ViewResult Create() => View();
         [HttpPost]
-        public async Task<IActionResult> Create(CreateModel model)
+        public async Task<IActionResult> Create(CreateModel model, Excerciser excerciser)
         {
             if (ModelState.IsValid)
             {
@@ -42,6 +50,15 @@ namespace Identity.Controllers
                     UserName = model.Name,
                     Email = model.Email
                 };
+                
+                excerciser.UserName = model.Name;
+                excerciser.Email = model.Email;
+                string newPassWord = model.Password;
+                excerciser.userPassword = Encrypt.CreateMD5(newPassWord);
+                _context.Excerciser.Add(excerciser);
+                _context.SaveChanges();
+
+
                 IdentityResult result
                 = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -61,7 +78,7 @@ namespace Identity.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(string id)
         {
-            AppUser user = await userManager.FindByIdAsync(id);
+            AppUser user = await userManager.FindByIdAsync(id);        
             if (user != null)
             {
                 IdentityResult result = await userManager.DeleteAsync(user);
@@ -80,7 +97,20 @@ namespace Identity.Controllers
             }
             return View("Index", userManager.Users);
         }
-       
+
+        public ViewResult HandleSpotMe() => View(repository.Excercisers);
+
+        [HttpPost]
+        public IActionResult DeleteFromSpotMe(int ID) // delete from other databases
+        {
+            Excerciser deletedExcerciser = repository.DeleteExcerciser(ID);
+            if (deletedExcerciser != null)
+            {
+                 TempData["message"] = $"{deletedExcerciser.UserName} was deleted";
+            }
+            return RedirectToAction("Index");
+        }
+
         public async Task<IActionResult> Edit(string id)
         {
             AppUser user = await userManager.FindByIdAsync(id);

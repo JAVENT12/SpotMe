@@ -1,0 +1,25 @@
+﻿@model MuscleGroup
+
+<h4>Create a muscle!</h4>
+<body>
+    <link rel="stylesheet" href="~/css/HelpSheet.css" />
+
+    <div asp-validation-summary=" All" class="text-danger"></div>
+    <form asp-action="Create" method="post">
+
+        <div class="form-group">
+            <label>Muscle:</label><input asp-for="muscle" placeholder="Enter Muscle!" class="form-control" />
+            <span asp-validation-for="muscle" class="text-danger"></span>
+        </div>
+
+
+      
+
+
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-area="" asp-controller="Admin" asp-action="Index" class="btn btn-secondary">Cancel</a>
+
+
+
+    </form>
+</body>

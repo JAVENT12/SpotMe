@@ -11,6 +11,7 @@ namespace Identity.Models
     public class MuscleGroup
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int muscleGroupID { get; set; }
         [Key]
         [ForeignKey("WorkOuts")]

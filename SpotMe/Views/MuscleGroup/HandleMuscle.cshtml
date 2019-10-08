@@ -1,44 +1,39 @@
-﻿@model IEnumerable<AppUser>
-<div><h3>User Accounts</h3></div>
+﻿@model IEnumerable<MuscleGroup>
+<div><h3>Muscle Groups</h3></div>
 <div class="text-danger" asp-validation-summary="ModelOnly"></div>
 
 <table class="table table-striped table-bordered table-sm">
-    <tr><th>ID</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th class="text-center">Actions</th>
+    <tr>
+        <th class="text-center">ID</th>
+        <th class="text-center">Muscle</th>
+
     </tr>
     @if (Model.Count() == 0)
     {
-        <tr><td colspan="3" class="text-center">No User Accounts</td></tr>
+        <tr><td colspan="4" class="text-center">No Muscles</td></tr>
     }
     else
     {
-        foreach (AppUser user in Model)
+        foreach (var muscle in Model)
         {
-             <tr>
-                <td>@user.Id</td>
-                <td>@user.UserName</td>
-                <td>@user.Email</td>
-                 <td class="text-center" >
+            <tr>
+                <td class="text-center">@muscle.muscleGroupID</td>
+                <td colspan="4" class="text-center">@muscle.muscle</td>
+                <td class="text-center">
 
-                    <form asp-action="Delete" asp-route-id="@user.Id" method="post">
+                    <form asp-action="Delete" asp-route-id="@muscle.muscleGroupID" method="post">
                         <a class="btn btn-sm btn-primary" asp-action="Edit"
-                           asp-route-id="@user.Id">Edit</a>
-                           <button type="submit" class="btn btn-sm btn-danger">
+                           asp-route-id="@muscle.muscleGroupID">Edit</a>
+                        <button type="submit" class="btn btn-sm btn-danger">
                             Delete
                         </button>
                     </form>
-
-
-
                 </td>
             </tr>
         }
     }
 </table>
-<div>
-    <a class="btn btn-primary" asp-action="Create">Create User</a>
+<div class="text-left">
     <a asp-area="" asp-controller="RoleAdmin" asp-action="Index" class="btn btn-secondary">Go to roles</a>
     <a asp-area="" asp-controller="Admin" asp-action="HandleSpotMe" class="btn btn-info">Handle SpotMe</a>
     <a asp-area="" asp-controller="MuscleGroup" asp-action="Create" class="btn btn-dark" d>Create Muscles</a>

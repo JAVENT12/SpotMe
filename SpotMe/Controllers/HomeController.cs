@@ -15,6 +15,8 @@ namespace Identity.Controllers
     {
         private ApplicationDbContext _context;
         private IExcerciserRepository repository;
+       
+
 
         private UserManager<AppUser> userManager;
         private IUserValidator<AppUser> userValidator;
@@ -32,6 +34,7 @@ namespace Identity.Controllers
             passwordHasher = passwordHash;
             repository = repo;
             _context = context;
+
         }
 
 
@@ -70,19 +73,16 @@ namespace Identity.Controllers
                     Email = model.Email
                 };
 
-
                 excerciser.UserName = model.Name;
                 excerciser.Email = model.Email;
                 string newPassWord = model.Password;
-                excerciser.userPassword = Encrypt.CreateMD5(newPassWord);
-                
-
-
-
+                excerciser.userPassword = Encrypt.CreateMD5(newPassWord);    
                 _context.Excerciser.Add(excerciser);
                 _context.SaveChanges();
+
                 IdentityResult result
                 = await userManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Routines");
@@ -106,10 +106,8 @@ namespace Identity.Controllers
         {
             return View();
         }
-        public ViewResult WorkOuts()
-        {
-            return View();
-        }
+       
+
 
 
 

@@ -37,6 +37,9 @@ namespace Identity
             options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=SpotMe;Trusted_Connection=True;MultipleActiveResultSets=true"));
             services.AddTransient<IExcerciserRepository, EFExcerciserRepository>();
 
+            services.AddDbContext<AppMuscleDbContext>(options =>
+            options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=SpotMe;Trusted_Connection=True;MultipleActiveResultSets=true"));
+            services.AddTransient<IMuscleGroupRepository, EFMuscleGroupRepository>();
 
 
             //options.UseSqlServer(Configuration["Data:SportStoreIdentity:ConnectionString"]));
@@ -70,8 +73,8 @@ namespace Identity
             app.UseMvcWithDefaultRoute();
             AppIdentityDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
 
-            // SeedData.EnsurePopulated(app); use for MuscleGroups
-
+            // SeedData.EnsurePopulated(app);// use for MuscleGroups
+           // SeedMuscleGroupData.EnsurePopulated(app); // use for MuscleGroups
         }
     }
 }

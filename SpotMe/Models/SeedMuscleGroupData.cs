@@ -8,18 +8,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Identity.Models
 {
-    public class SeedData
+    public class SeedMuscleGroupData
     {
         public static void EnsurePopulated(IApplicationBuilder app)
         {
-            ApplicationDbContext context = app.ApplicationServices
-            .GetRequiredService<ApplicationDbContext>();
+            AppMuscleDbContext context = app.ApplicationServices
+            .GetRequiredService<AppMuscleDbContext>();
             context.Database.Migrate();
-            if (!context.Excerciser.Any()) //Change for muscle groups later
+            if (!context.MuscleGroup.Any()) 
             {
+                context.MuscleGroup.AddRange();
 
-                context.SaveChanges();
+
+               context.SaveChanges();
             }
         }
     }
 }
+

@@ -14,7 +14,17 @@ namespace Identity.Models
             context = ctx;
         }
         public IQueryable<Excerciser> Excercisers => context.Excerciser;
-
+        public Excerciser DeleteExcerciser(int ID)
+        {
+            Excerciser dbEntry = context.Excerciser
+            .FirstOrDefault(p => p.ID == ID);
+            if (dbEntry != null)
+            {
+                context.Excerciser.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
 
     }
 }
