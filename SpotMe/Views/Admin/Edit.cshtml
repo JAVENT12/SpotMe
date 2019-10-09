@@ -1,5 +1,9 @@
 ﻿@model AppUser
-<div ><h3>Edit User</h3></div>
+@{
+    ViewBag.Title = "Manage";
+    Layout = "_AdminLayout";
+}
+<div><h3>Edit User</h3></div>
 <div asp-validation-summary="All" class="text-danger"></div>
 <form asp-action="Edit" method="post">
     <div class="form-group">

@@ -27,7 +27,7 @@ namespace Identity
             services.AddTransient<IPasswordValidator<AppUser>, // From infrastructure
             CustomPasswordValidator>();
 
-           // services.AddTransient<IUserValidator<AppUser>, //just a way of validating what you want
+            //services.AddTransient<IUserValidator<AppUser>, //just a way of validating what you want
             //CustomUserValidator>();
 
             services.AddDbContext<AppIdentityDbContext>(options =>

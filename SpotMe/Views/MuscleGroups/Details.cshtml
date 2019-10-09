@@ -1,0 +1,32 @@
+﻿@model Identity.Models.MuscleGroup
+
+@{
+    ViewData["Title"] = "Details";
+        Layout = "_AdminLayout";
+
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MuscleGroup</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkoutsID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkoutsID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.muscle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.muscle)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.muscleGroupID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
