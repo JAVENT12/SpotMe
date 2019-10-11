@@ -12,8 +12,9 @@ namespace Identity.Models
         public EFExcerciserRepository(ApplicationDbContext ctx)
         {
             context = ctx;
-        }
+         }
         public IQueryable<Excerciser> Excercisers => context.Excerciser;
+      
         public Excerciser DeleteExcerciser(int ID)
         {
             Excerciser dbEntry = context.Excerciser

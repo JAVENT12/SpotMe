@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Identity.Models.WorkOuts>
+
+@{
+    ViewData["Title"] = "Index";
+            Layout = "_AdminLayout";
+
+}
+
+<h3>Create a Muscle!</h3>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-striped table-bordered table-sm">
+    <thead>
+        <tr>
+
+            <th>
+               MuscleGroupID
+
+            </th>
+            <th>
+              WorkOutsID
+            </th>
+
+            <th>
+                Title
+            </th>
+
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.muscleGroupID)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.muscleGroupID)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WorkOutsID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.WorkOutsID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.WorkOutsID">Delete</a>
+            </td>
+
+        </tr>
+
+}
+    </tbody>
+</table>

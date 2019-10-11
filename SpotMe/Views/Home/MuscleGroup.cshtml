@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<MuscleGroup>
-<div><h3>Muscle Groups</h3></div>
+@*<div><h3>Muscle Groups</h3></div>*@
 <div class="text-danger" asp-validation-summary="ModelOnly"></div>
 
 
@@ -17,16 +17,8 @@
         foreach (var role in Model)
         {
             <tr>
-                <td colspan="4" class="text-center">@role.muscle</td>
+                <td colspan="4" class="text-center">@role.name</td>
             </tr>
         }
     }
 </table>
-<div class="text-left">
-
-    @if (User?.Identity?.IsAuthenticated ?? false)
-    {
-        <a asp-controller="Account" asp-action="Logout"
-           class="btn btn-danger">Logout</a>
-    }
-</div>

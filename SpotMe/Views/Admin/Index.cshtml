@@ -7,6 +7,11 @@
 <div><h3>User Accounts</h3></div>
 <div class="text-danger" asp-validation-summary="ModelOnly"></div>
 
+<p>
+    <a asp-action="Create">Create User, </a>
+    <a asp-area="" asp-controller="Admin" asp-action="HandleSpotMe">Handle SpotMe</a>
+</p>
+
 <table class="table table-striped table-bordered table-sm">
 
     <tr>
@@ -47,8 +52,7 @@
 </table>
 
 <div>
-    <a class="btn btn-primary" asp-action="Create">Create User</a>
-    <a asp-area="" asp-controller="Admin" asp-action="HandleSpotMe" class="btn btn-info">Handle SpotMe</a>
+  
 
     @if (User?.Identity?.IsAuthenticated ?? false)
     {

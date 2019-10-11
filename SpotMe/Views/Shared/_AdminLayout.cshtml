@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - SpotMe_</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link asp-href-include="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -25,10 +26,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="RoleAdmin" asp-action="Index">Roles</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="MuscleGroups" asp-action="Index">Muscles</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="MuscleGroups" asp-action="Index">WorkOuts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="WorkOuts" asp-action="Index">WorkOuts</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="WorkOuts" asp-action="Index">Muscles</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Routines">Routines</a>

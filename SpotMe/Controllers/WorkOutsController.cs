@@ -7,35 +7,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Identity.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Identity.Infrastructure;
-
 
 namespace Identity
 {
-    [Authorize(Roles = "Admins")]
-    public class MuscleGroupsController : Controller
+    [Authorize]
+    public class WorkOutsController : Controller
     {
-        private readonly AppMuscleDbContext _context;
-       // private IMuscleGroupRepository
+        private readonly AppWorkOutsDbContext _context;
 
-
-
-
-
-
-        public MuscleGroupsController(AppMuscleDbContext context)
+        public WorkOutsController(AppWorkOutsDbContext context)
         {
             _context = context;
         }
 
-        // GET: MuscleGroups
+        // GET: WorkOuts
         public async Task<IActionResult> Index()
         {
-            return View(await _context.MuscleGroup.ToListAsync());
+            return View(await _context.WorkOuts.ToListAsync());
         }
 
-        // GET: MuscleGroups/Details/5
+        // GET: WorkOuts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,59 +34,44 @@ namespace Identity
                 return NotFound();
             }
 
-            var muscleGroup = await _context.MuscleGroup
-                .FirstOrDefaultAsync(m => m.muscleGroupID == id);
-            if (muscleGroup == null)
+            var workOuts = await _context.WorkOuts
+                .FirstOrDefaultAsync(m => m.WorkOutsID == id);
+            if (workOuts == null)
             {
                 return NotFound();
             }
 
-            return View(muscleGroup);
+            return View(workOuts);
         }
 
-        // GET: MuscleGroups/Create
+        // GET: WorkOuts/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: MuscleGroups/Create
+        // POST: WorkOuts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("muscleGroupID,WorkoutsID,name")] MuscleGroup muscleGroup)
+        public async Task<IActionResult> Create([Bind("WorkOutsID,muscleGroupID,title")] WorkOuts workOuts)
         {
-            //AppMuscleDbContext db = new AppMuscleDbContext();
-
-         //   bool IsMuscleNameExist = db.MuscleGroup.Any
-         //(x => x.muscle == muscleGroup.muscle && x.muscleGroupID != muscleGroup.muscleGroupID);
-
-         //   if (IsMuscleNameExist == true)
-         //   {
-         //       ModelState.AddModelError("muscle", "muscle already exists");
-         //   }
-
-
-            if (string.IsNullOrEmpty(muscleGroup.name))
+            if (string.IsNullOrEmpty(workOuts.title))
             {
-                ModelState.AddModelError(nameof(muscleGroup.name),
-                "Please enter a muscle");
+                ModelState.AddModelError(nameof(workOuts.title),
+                "Please enter an exercise title");
             }
-            //if (ModelState.GetFieldValidationState(nameof(muscleGroup.muscle))
-            //    == ModelValidationState.Valid
-            //    && muscleGroup.muscle.Contains("")) 
-        
             if (ModelState.IsValid)
             {
-                _context.Add(muscleGroup);
+                _context.Add(workOuts);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(muscleGroup);
+            return View(workOuts);
         }
 
-        // GET: MuscleGroups/Edit/5
+        // GET: WorkOuts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -103,22 +79,22 @@ namespace Identity
                 return NotFound();
             }
 
-            var muscleGroup = await _context.MuscleGroup.FindAsync(id);
-            if (muscleGroup == null)
+            var workOuts = await _context.WorkOuts.FindAsync(id);
+            if (workOuts == null)
             {
                 return NotFound();
             }
-            return View(muscleGroup);
+            return View(workOuts);
         }
 
-        // POST: MuscleGroups/Edit/5
+        // POST: WorkOuts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("muscleGroupID,WorkoutsID,name")] MuscleGroup muscleGroup)
+        public async Task<IActionResult> Edit(int id, [Bind("WorkOutsID,muscleGroupID,title")] WorkOuts workOuts)
         {
-            if (id != muscleGroup.muscleGroupID)
+            if (id != workOuts.WorkOutsID)
             {
                 return NotFound();
             }
@@ -127,12 +103,12 @@ namespace Identity
             {
                 try
                 {
-                    _context.Update(muscleGroup);
+                    _context.Update(workOuts);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MuscleGroupExists(muscleGroup.muscleGroupID))
+                    if (!WorkOutsExists(workOuts.WorkOutsID))
                     {
                         return NotFound();
                     }
@@ -143,10 +119,10 @@ namespace Identity
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(muscleGroup);
+            return View(workOuts);
         }
 
-        // GET: MuscleGroups/Delete/5
+        // GET: WorkOuts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -154,30 +130,30 @@ namespace Identity
                 return NotFound();
             }
 
-            var muscleGroup = await _context.MuscleGroup
-                .FirstOrDefaultAsync(m => m.muscleGroupID == id);
-            if (muscleGroup == null)
+            var workOuts = await _context.WorkOuts
+                .FirstOrDefaultAsync(m => m.WorkOutsID == id);
+            if (workOuts == null)
             {
                 return NotFound();
             }
 
-            return View(muscleGroup);
+            return View(workOuts);
         }
 
-        // POST: MuscleGroups/Delete/5
+        // POST: WorkOuts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var muscleGroup = await _context.MuscleGroup.FindAsync(id);
-            _context.MuscleGroup.Remove(muscleGroup);
+            var workOuts = await _context.WorkOuts.FindAsync(id);
+            _context.WorkOuts.Remove(workOuts);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MuscleGroupExists(int id)
+        private bool WorkOutsExists(int id)
         {
-            return _context.MuscleGroup.Any(e => e.muscleGroupID == id);
+            return _context.WorkOuts.Any(e => e.WorkOutsID == id);
         }
     }
 }

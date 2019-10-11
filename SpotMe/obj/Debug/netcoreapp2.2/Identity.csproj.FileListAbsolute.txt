@@ -161,3 +161,8 @@ C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\M
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\MuscleGroups\Index.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\WorkOuts\Create.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\WorkOuts\Delete.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\WorkOuts\Details.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\WorkOuts\Edit.cshtml.g.cs
+C:\Users\Jason Ventura\source\repos\SpotMe\obj\Debug\netcoreapp2.2\Razor\Views\WorkOuts\Index.cshtml.g.cs
