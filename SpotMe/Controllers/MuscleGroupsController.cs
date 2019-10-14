@@ -64,7 +64,7 @@ namespace Identity
         [Authorize(Roles = "Admins")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("muscleGroupID,WorkoutsID,name")] MuscleGroup muscleGroup)
+        public async Task<IActionResult> Create([Bind("muscleGroupID,WorkoutsID,name,description")] MuscleGroup muscleGroup)
         {
             //AppMuscleDbContext db = new AppMuscleDbContext();
 
@@ -117,7 +117,7 @@ namespace Identity
         [Authorize(Roles = "Admins")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("muscleGroupID,WorkoutsID,name")] MuscleGroup muscleGroup)
+        public async Task<IActionResult> Edit(int id, [Bind("muscleGroupID,WorkoutsID,name,description")] MuscleGroup muscleGroup)
         {
             if (id != muscleGroup.muscleGroupID)
             {

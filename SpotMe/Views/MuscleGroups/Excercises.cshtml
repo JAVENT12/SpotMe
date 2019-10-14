@@ -11,7 +11,7 @@
 </p>
 
 
-<table class="table table-striped table-bordered table-sm">
+<table class="table table-striped table-bordered table-sm" >
 
     <thead>
         <tr>
@@ -29,9 +29,11 @@
         {
             <tr>
 
-                <td class="text-center">
-                    @Html.DisplayFor(modelItem => item.name)
-                    | <a  asp-action="Description" asp-route-id="@item.muscleGroupID">Description</a> 
+                <td class="text-center" >
+                    @*<a asp-action="Create" style="color:black">Create WorkOuts!, </a>*@
+                    @*@Html.DisplayFor(modelItem => item.name)
+                    |*@
+                    <a asp-action="Description"style="color:black" asp-route-id="@item.muscleGroupID"> @Html.DisplayFor(modelItem => item.name )</a>
 
                 </td>
             

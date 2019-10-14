@@ -21,6 +21,7 @@ namespace Identity.Models
 
         [Required(ErrorMessage = "Please enter a muscle")]
         public string name { get; set; }
+        public string description { get; set; }
 
     }
 }
