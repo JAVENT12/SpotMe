@@ -13,7 +13,6 @@ using Identity.Infrastructure;
 
 namespace Identity
 {
-    [Authorize(Roles = "Admins")]
     public class MuscleGroupsController : Controller
     {
         private readonly AppMuscleDbContext _context;
@@ -28,13 +27,13 @@ namespace Identity
         {
             _context = context;
         }
-
+        [Authorize(Roles = "Admins")]
         // GET: MuscleGroups
         public async Task<IActionResult> Index()
         {
             return View(await _context.MuscleGroup.ToListAsync());
         }
-
+        [Authorize(Roles = "Admins")]
         // GET: MuscleGroups/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -52,7 +51,7 @@ namespace Identity
 
             return View(muscleGroup);
         }
-
+        [Authorize(Roles = "Admins")]
         // GET: MuscleGroups/Create
         public IActionResult Create()
         {
@@ -62,6 +61,7 @@ namespace Identity
         // POST: MuscleGroups/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admins")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("muscleGroupID,WorkoutsID,name")] MuscleGroup muscleGroup)
@@ -94,7 +94,7 @@ namespace Identity
             }
             return View(muscleGroup);
         }
-
+        [Authorize(Roles = "Admins")]
         // GET: MuscleGroups/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -114,6 +114,7 @@ namespace Identity
         // POST: MuscleGroups/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admins")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("muscleGroupID,WorkoutsID,name")] MuscleGroup muscleGroup)
@@ -145,7 +146,7 @@ namespace Identity
             }
             return View(muscleGroup);
         }
-
+        [Authorize(Roles = "Admins")]
         // GET: MuscleGroups/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -163,7 +164,7 @@ namespace Identity
 
             return View(muscleGroup);
         }
-
+        [Authorize(Roles = "Admins")]
         // POST: MuscleGroups/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -173,6 +174,26 @@ namespace Identity
             _context.MuscleGroup.Remove(muscleGroup);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Excercises()
+        {
+            return View(await _context.MuscleGroup.ToListAsync());
+        }
+        public async Task<IActionResult> Description(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var muscleGroup = await _context.MuscleGroup
+                .FirstOrDefaultAsync(m => m.muscleGroupID == id);
+            if (muscleGroup == null)
+            {
+                return NotFound();
+            }
+
+            return View(muscleGroup);
         }
 
         private bool MuscleGroupExists(int id)

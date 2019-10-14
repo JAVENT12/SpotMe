@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Identity.Models.WorkOuts>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<h3></h3>
+
+<p> </p>
+<table class="table table-striped table-bordered table-sm">
+    <link rel="stylesheet" href="~/css/main.css" />
+
+    <thead>
+        <tr>
+
+
+
+            <th class="text-center">Muscles</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">
+
+
+                    @Html.DisplayFor(modelItem => item.title)
+                    | <a asp-controller="MuscleGroups" asp-action="Excercises" asp-route-id="@item.muscleGroupID">Excercises</a>
+
+                </td>
+
+
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>

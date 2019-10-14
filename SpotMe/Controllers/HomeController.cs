@@ -19,6 +19,8 @@ namespace Identity.Controllers
         private AppMuscleDbContext __context;
         private IMuscleGroupRepository muscleRepository;
 
+
+
         private UserManager<AppUser> userManager;
         private IUserValidator<AppUser> userValidator;
         private IPasswordValidator<AppUser> passwordValidator;
@@ -27,7 +29,8 @@ namespace Identity.Controllers
         public HomeController(UserManager<AppUser> usrMgr,
         IUserValidator<AppUser> userValid,
         IPasswordValidator<AppUser> passValid,
-        IPasswordHasher<AppUser> passwordHash, IExcerciserRepository repo, ApplicationDbContext context, AppMuscleDbContext mContext, IMuscleGroupRepository mRepo)
+        IPasswordHasher<AppUser> passwordHash, IExcerciserRepository repo, ApplicationDbContext context,
+        AppMuscleDbContext mContext, IMuscleGroupRepository mRepo)
         {
             userManager = usrMgr;
             userValidator = userValid;
@@ -37,6 +40,7 @@ namespace Identity.Controllers
             _context = context;
             muscleRepository = mRepo;
             __context = mContext;
+
 
         }
 
@@ -110,7 +114,7 @@ namespace Identity.Controllers
             return View();
         }
 
-        public ViewResult MuscleGroup() => View(muscleRepository.MuscleGroups);
+        
 
 
 

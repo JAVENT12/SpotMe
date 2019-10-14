@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Identity
 {
-    [Authorize]
     public class WorkOutsController : Controller
     {
         private readonly AppWorkOutsDbContext _context;
@@ -20,11 +19,13 @@ namespace Identity
             _context = context;
         }
 
+        [Authorize(Roles = "Admins")]
         // GET: WorkOuts
         public async Task<IActionResult> Index()
         {
             return View(await _context.WorkOuts.ToListAsync());
         }
+        [Authorize(Roles = "Admins")]
 
         // GET: WorkOuts/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -43,6 +44,7 @@ namespace Identity
 
             return View(workOuts);
         }
+        [Authorize(Roles = "Admins")]
 
         // GET: WorkOuts/Create
         public IActionResult Create()
@@ -53,6 +55,7 @@ namespace Identity
         // POST: WorkOuts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admins")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("WorkOutsID,muscleGroupID,title")] WorkOuts workOuts)
@@ -70,7 +73,7 @@ namespace Identity
             }
             return View(workOuts);
         }
-
+        [Authorize(Roles = "Admins")]
         // GET: WorkOuts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -90,6 +93,7 @@ namespace Identity
         // POST: WorkOuts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admins")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("WorkOutsID,muscleGroupID,title")] WorkOuts workOuts)
@@ -121,7 +125,7 @@ namespace Identity
             }
             return View(workOuts);
         }
-
+        [Authorize(Roles = "Admins")]
         // GET: WorkOuts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -150,6 +154,16 @@ namespace Identity
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> MuscleGroup()
+        {
+            return View(await _context.WorkOuts.ToListAsync());
+        }
+
+
+
+
+
 
         private bool WorkOutsExists(int id)
         {
