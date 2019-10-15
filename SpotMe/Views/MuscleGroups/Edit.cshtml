@@ -12,7 +12,7 @@
 <div class="row">
     <link rel="stylesheet" href="~/css/main.css" />
 
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="muscleGroupID" />
@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label asp-for="description" class="control-label"></label>
 
-                <textarea rows="10" cols="77" id="description" input asp-for="description" class="form-control">
+                <textarea rows="10" cols="300" id="description" input asp-for="description" class="form-control">
  
                 </textarea>
                 @*<input asp-for="description" class="form-control" />*@

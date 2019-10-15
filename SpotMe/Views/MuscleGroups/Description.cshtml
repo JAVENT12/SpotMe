@@ -7,8 +7,7 @@
 
 
 
-<h4> Excercise Description</h4>
-<hr />
+
 <div>
     <link rel="stylesheet" href="~/css/main.css" />
 
@@ -18,7 +17,7 @@
             <tr>
 
 
-                <th>
+                <th class="text-center">
                     @Html.DisplayFor(model => model.name)
 
                 </th>
@@ -34,9 +33,16 @@
 
                 <td>
                     @Html.DisplayFor(model => model.description)
-
                 </td>
 
+                
+
+            </tr>
+            <tr>
+                <td>
+                    <a asp-action="Excercises" style="color:black" >Back to List</a>
+
+                </td>
             </tr>
 
         </tbody>
@@ -64,5 +70,4 @@
         </dl>*@
 </div>
 <div>
-    <a asp-action="Excercises">Back to List</a>
 </div>
