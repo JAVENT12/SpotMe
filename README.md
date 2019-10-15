@@ -19,20 +19,23 @@ SpotMe will be an exercise application. Where users can select their workouts, a
 
 
 ## Requirements
-![SpotMe](RTM&TestPlanning(TC1).JPG))
+![SpotMe](RTM&TestPlanning(TC2).JPG))
 
 ## TestCases
 Test Case 1
-![SpotMe](TC1R1-2.JPG)
-![SpotMe](ViewRoles.JPG)
+![SpotMe](Database1.JPG)
+![SpotMe](Database2.JPG)
+Test Case 2
+![SpotMe](ViewExcercises(1).JPG)
+![SpotMe](ViewMuscles(2).JPG)
 
 ## Wireframes
 ![SpotMe](PlaylistPage.jpg)
 ![SpotMe](LoginPage.jpg)
 
 ## Views
-![SpotMe](SignUp(1).JPG)
-![SpotMe](Login(2).JPG)
+![SpotMe](ViewRoles(1).JPG)
+![SpotMe](FAQ(2).JPG)
 
 ## Database
 
