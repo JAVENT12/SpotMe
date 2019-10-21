@@ -26,8 +26,10 @@ Test Case 1
 ![SpotMe](Database1.JPG)
 ![SpotMe](Database2.JPG)
 Test Case 2
-![SpotMe](ViewExcercises(1).JPG)
-![SpotMe](ViewMuscles(2).JPG)
+![SpotMe](ViewExcercises(2).JPG)
+![SpotMe](ViewExcercises(3).JPG)
+![SpotMe](ViewDescription(1).JPG)
+![SpotMe](ViewMuscles(3).JPG)
 
 ## Wireframes
 ![SpotMe](PlaylistPage.jpg)
@@ -35,7 +37,7 @@ Test Case 2
 
 ## Views
 ![SpotMe](ViewRoles(1).JPG)
-![SpotMe](FAQ(2).JPG)
+![SpotMe](FAQ(3).JPG)
 
 ## Database
 
