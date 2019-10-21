@@ -14,7 +14,7 @@ My MSSA project,  SpotMe will be an exercise application. With workouts covering
 ![SpotMe](ERD(New1).jpg)
 
 ## Diagrams
-![SpotMe](SpotMeDiagram(1).JPG)
+![SpotMe](SpotMeDiagram(3).JPG)
 ![SpotMe](SpotIdentityDiagram(1).JPG))
 
 
