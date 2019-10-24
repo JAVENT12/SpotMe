@@ -1,5 +1,6 @@
 # SpotMe
 My MSSA project,  SpotMe will be an exercise application. With workouts covering all genres of fitness, anyone can come to SpotMe for information on  the exercise and technique. Users also have the option of creating an account to make their own routines from selected workouts and share with other users. Besides just making an exercise application, this is going to be exercise app I've always wanted. 
+ [Click here to see my prototype!](https://spotme.azurewebsites.net/).
 # Table of Contents
 1. [ERD](https://github.com/JAVENT12/SpotMe#erd)
 2. [Diagrams](https://github.com/JAVENT12/SpotMe#diagrams)
