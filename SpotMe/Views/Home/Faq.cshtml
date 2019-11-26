@@ -4,7 +4,7 @@
 @*<h1>@viewdata["title"]</h1*@
     <head>
         <title>@ViewData["Title"] - FAQ</title>
-        @*<link rel="stylesheet" href="~/css/FAQSheet.css" />
+        @*<link rel="stylesheet" href="~/css/faqsheet.css" />
         <script src="~/js/FAQ.js"></script>*@
         <link rel="stylesheet" href="~/css/main.css" />
 
@@ -18,142 +18,162 @@
         <div id="demo" class="collapse">
             Lorem ipsum dolor text....
         </div>*@
-    <div class="panel-group" id="accordion">
+        <div class="panel-group" id="accordion">
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                        How do I change my password?
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse1" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    Go to Password reset page.
+            @*<div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            Q:  How do I change my password?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        Go to Password reset page.
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                        Forgot password?
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse2" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    Go to Password reset page.
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                            Q: Forgot password?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        Go to Password reset page.
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                        Forgot username?
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse3" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    Go to username reset page.
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                            Q: Forgot username?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        Go to username reset page.
+                    </div>
+                </div>
+            </div>*@
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                            Q: How do I create an account?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <div class="container">
+                        Create an account by clicking on the Sign Up tab at the top of the website. Once
+                        there choose an appropriate username and password.
+                    </div>
                 </div>
             </div>
-        </div>
-
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                        How do I create an account?
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse4" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Create an account by clicking on Sign Up tab at the top of the website. Once
-                    there choose an appropriate username and password.
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                            Q: Do I need a spotter?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse5" class="panel-collapse collapse">
+                    <div class="container">
+                        Of course!
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-                        Do I need a spotter?
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse5" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Of course!
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                            Q: How do I make a routine?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse6" class="panel-collapse collapse">
+                    <div class="container">
+                        Click the routines tab at the top of the website. Then start adding
+                        workouts to your routine! You must create an account first, to save routines to your account.
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
-                        How do I make a routine?
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse6" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Click the routines tab at the top of the website. Then start adding
-                    workouts to your routine! Although this feature is for account holders
-                    only. It costs NO money to make an account.
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                            Q: Is SpotMe free?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse7" class="panel-collapse collapse">
+                    <div class="container">
+                        Yes! SpotMe is a fitness app for anyone. 
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
-                        Is SpotMe free?
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse7" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Yes! SpotMe is a fitness app for anyone. Although only users with account
-                    can make routines, it costs NO money to make an account.
+
+
+            @*<div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+                            Q: How do I turn off notifications?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse8" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Click on the settings tab at the top of the website, to go to the settings
+                        page. When at the settings page, slide the notification's button to off.
+                    </div>
+                </div>
+            </div>*@
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+                            Q: Where's my exercise?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse9" class="panel-collapse collapse">
+                    <div class="container">
+                        Don't know which muscle group or page it's on? To view all exercises at once, just click 
+                        <a  asp-area="" asp-controller="MuscleGroups" asp-action="SeeAll">here</a>
+
+                       
+
+                    </div>
                 </div>
             </div>
+
+
+
+
         </div>
 
-
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
-                        How do I turn off notifications?
-                    </a>
-                </h4>
+        @*<footer>
+            <div class="container">
+                &copy; 2019 - SpotMe_ - <a asp-area="" asp-controller="home" asp-action="privacy">privacy</a>
             </div>
-            <div id="collapse8" class="panel-collapse collapse">
-                <div class="panel-body">
-                   Click on the settings tab at the top of the website, to go to the settings
-                    page. When at the settings page, slide the notification's button to off.
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-    </div>
-
+        </footer>*@
 
 
 

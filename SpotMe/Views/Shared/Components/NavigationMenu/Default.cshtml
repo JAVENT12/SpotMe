@@ -1,0 +1,20 @@
+﻿@model IEnumerable<string>
+
+@foreach (string category in Model)
+{
+    <a class="btn btn-block btn-dark
+@(category == ViewBag.SelectedCategory ? "btn-light": "btn-secondary")"
+       asp-action="Excercises"
+       asp-controller="MuscleGroups"
+       asp-route-category="@category"
+       asp-route-productPage="1">
+        @category
+    </a>
+}
+<a class="btn btn-block btn-dark"
+   asp-action="Excercises"
+   asp-controller="MuscleGroups"
+   asp-route-category="">
+    View All Exercises
+</a>
+@*<a asp-action="Description" style="color:black" asp-route-id="@item.muscleGroupID"> @Html.DisplayFor(modelItem => item.name)</a> How I actually want muscles displayed*@

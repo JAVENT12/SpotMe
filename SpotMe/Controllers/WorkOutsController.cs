@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Identity
 {
+   // [RequireHttps]
     public class WorkOutsController : Controller
     {
         private readonly AppWorkOutsDbContext _context;

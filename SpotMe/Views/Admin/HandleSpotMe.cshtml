@@ -1,9 +1,13 @@
 ﻿@model IEnumerable<Excerciser>
+@*@model Identity.Models.ViewModel.ExerciserListViewModel*@
+
 @{
     ViewBag.Title = "Manage";
     Layout = "_AdminLayout";
 }
 <div><h3>Excercisers</h3></div>
+<link rel="stylesheet" href="~/css/main.css" />
+
 <table class="table table-striped table-bordered table-sm">
     <tr>
         <th class="text-center">ID</th>
@@ -34,9 +38,14 @@
         </tr>
     }
 </table>
+@*<div page-model="@Model.PagingInfo" page-action="HandleSpotMe" page-classes-enabled="true"
+         page-class="btn" page-class-normal="btn-secondary"
+         page-class-selected="btn-info" class="btn-group pull-right m-1">
+    </div>*@
+
 <div class="text-left">
     <a class="btn btn-primary" asp-action="Create">Create User</a>
-   
+
     @if (User?.Identity?.IsAuthenticated ?? false)
     {
         <a asp-controller="Account" asp-action="Logout"

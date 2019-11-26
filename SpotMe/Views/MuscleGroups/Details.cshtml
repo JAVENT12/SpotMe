@@ -6,24 +6,40 @@
 
 }
 
+    <head>
 
+    </head>
 
 <div>
     <h4>WorkOut Details</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.WorkoutsID)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.WorkoutsID)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.name)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.muscleCategory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.muscleCategory)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
     </dl>
 </div>
 <div>

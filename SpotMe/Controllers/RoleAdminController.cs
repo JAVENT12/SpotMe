@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Users.Controllers
 {
+   // [RequireHttps]
     [Authorize(Roles = "Admins")]
     public class RoleAdminController : Controller
     {

@@ -1,0 +1,53 @@
+﻿@model WorkOutIndexViewModel
+
+
+    <p>
+        <a>Your Routine</a>
+        <a asp-action="Create">Create User, </a>
+        <a asp-area="" asp-controller="Admin" asp-action="HandleSpotMe">Handle SpotMe</a>
+        <a  asp-area="" asp-controller="Routine" asp-action="RoutineList">Routines</a>
+    </p>
+
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            @*<th>Quantity</th>*@
+            @*<th>Exercise #</th>*@
+            <th class="text-left">MuscleGroup</th>
+            <th class="text-left">WorkOut</th>
+            <th class="text-center">Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @*<link rel="stylesheet" href="~/css/main.css" />*@
+
+        @foreach (var line in Model.Routine.Lines.Distinct())
+        {
+
+            <tr>
+                @*<td class="text-center">@line.Quantity</td>*@
+                @*<td></td>*@
+                <td class="text-left">@line.MuscleGroup.muscleCategory</td>
+                @*<td class="text-left">@line.MuscleGroup.name</td>*@
+                <td>
+                    <a asp-action="UserDescription" style="color:white" asp-route-id="@line.MuscleGroup.muscleGroupID"> @Html.DisplayFor(modelItem => line.MuscleGroup.name)</a>
+                </td>
+                <td class="text-center">
+                    <form asp-action="RemoveFromRoutine" method="post">
+                        <input type="hidden" name="muscleGroupID"
+                               value="@line.MuscleGroup.muscleGroupID" />
+                        <input type="hidden" name="returnUrl"
+                               value="@Model.ReturnUrl" />
+                        <button type="submit" class="btn btn-success btn-sm pull-right">
+                            Remove
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+    
+</table>

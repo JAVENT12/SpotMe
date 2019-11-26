@@ -19,9 +19,10 @@ namespace Identity.Models
         //[ForeignKey("WorkOuts")]
         public int WorkoutsID { get; set; }
 
-        [Required(ErrorMessage = "Please enter a muscle")]
+        [Required(ErrorMessage = "Please enter a WorkOut")]
         public string name { get; set; }
         public string description { get; set; }
+        public string muscleCategory { get; set; }
 
     }
 }

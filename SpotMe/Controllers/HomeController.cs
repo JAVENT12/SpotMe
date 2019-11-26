@@ -11,6 +11,7 @@ using Identity.Infrastructure;
 
 namespace Identity.Controllers
 {
+    //[RequireHttps]
     public class HomeController : Controller
     {
         private ApplicationDbContext _context;
@@ -70,6 +71,8 @@ namespace Identity.Controllers
         public ViewResult SignUp() => View();
 
         [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> SignUp(CreateModel model, Excerciser excerciser)
         {
             if (ModelState.IsValid)
@@ -77,21 +80,28 @@ namespace Identity.Controllers
                 AppUser user = new AppUser
                 {
                     UserName = model.Name,
-                    Email = model.Email
-                };
+                    Email = model.Email,
 
-                excerciser.UserName = model.Name;
-                excerciser.Email = model.Email;
-                string newPassWord = model.Password;
-                excerciser.userPassword = Encrypt.CreateMD5(newPassWord);    
-                _context.Excerciser.Add(excerciser);
-                _context.SaveChanges();
+                };
+                //string name = user.UserName; Testing!
+                //if(name.Contains(" "))
+                //{
+                //    ModelState.AddModelError(nameof(name),"No white spaces");
+                //    return View("SignUp");
+                //}
+                //excerciser.UserName = name;
+                //excerciser.Email = user.Email;
+                //string newPassWord = model.Password;
+                //excerciser.userPassword = Encrypt.CreateMD5(newPassWord);    
+                //_context.Excerciser.Add(excerciser);
+                //_context.SaveChanges();
 
                 IdentityResult result
                 = await userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
+                   
                     return RedirectToAction("Routines");
                 }
                 else

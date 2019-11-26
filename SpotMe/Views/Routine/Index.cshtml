@@ -1,0 +1,67 @@
+﻿@model WorkOutIndexViewModel
+
+    <p>
+        @if (User?.Identity?.IsAuthenticated ?? true)
+        {
+
+            <a class="nav-link " style="color:lightseagreen"> @User.Identity.Name's Routine</a>
+            <a asp-area="" asp-controller="Routine" asp-action="RoutineList"> View Routines</a>
+        }
+        else
+        {
+            <a> Your Routine</a>
+        }
+
+    </p>
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            @*<th>Quantity</th>*@
+            @*<th>Exercise #</th>*@
+            <th class="text-left">MuscleGroup</th>
+            <th class="text-left">WorkOut</th>
+            <th class="text-center">Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @*<link rel="stylesheet" href="~/css/main.css" />*@
+
+        @foreach (var line in Model.Routine.Lines.Distinct())
+        {
+
+            <tr>
+                @*<td class="text-center">@line.Quantity</td>*@
+                @*<td></td>*@
+                <td class="text-left">@line.MuscleGroup.muscleCategory</td>
+                @*<td class="text-left">@line.MuscleGroup.name</td>*@
+                <td>
+                    <a asp-action="Description" style="color:white" asp-route-id="@line.MuscleGroup.muscleGroupID"> @Html.DisplayFor(modelItem => line.MuscleGroup.name)</a>
+                </td>
+                <td class="text-center">
+                    <form asp-action="RemoveFromRoutine" method="post">
+                        <input type="hidden" name="muscleGroupID"
+                               value="@line.MuscleGroup.muscleGroupID" />
+                        <input type="hidden" name="returnUrl"
+                               value="@Model.ReturnUrl" />
+                        <button type="submit" class="btn btn-success btn-sm pull-right">
+                            Remove
+                        </button>
+                    </form>
+                </td>
+                @*<td class="text-right">
+                       @((line.Quantity * line.Product.Price).ToString("c"))
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+    @*<tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td class="text-right">
+                </td>
+            </tr>
+        </tfoot>*@
+</table>
+

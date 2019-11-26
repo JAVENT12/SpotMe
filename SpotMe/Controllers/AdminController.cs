@@ -12,6 +12,7 @@ using Identity.Infrastructure;
 
 namespace Identity.Controllers
 {
+  //  [RequireHttps]
     [Authorize(Roles = "Admins")]
     public class AdminController : Controller
     {
@@ -39,6 +40,21 @@ namespace Identity.Controllers
         }
 
         public ViewResult Index() => View(userManager.Users);
+        //public ViewResult Index(int productPage = 1)
+        //    => View(new AppUserListViewModel
+        //    {
+        //        AppUsers = repos.AppUsers
+        //        .OrderBy(a => a.Id)
+        //        .Skip((productPage - 1) * PageSize)
+        //        .Take(PageSize),
+        //        PagingInfo = new PagingInfo
+        //        {
+        //            CurrentPage = productPage,
+        //            ItemsPerPage = PageSize,
+        //            TotalItems = repos.AppUsers.Count()
+        //        }
+        //    });
+
         public ViewResult Create() => View();
         [HttpPost]
         public async Task<IActionResult> Create(CreateModel model, Excerciser excerciser)
@@ -63,6 +79,7 @@ namespace Identity.Controllers
                 = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
                     return RedirectToAction("Index");
                 }
                 else

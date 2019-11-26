@@ -4,10 +4,14 @@
     Layout = "_AdminLayout";
 }
 
-<div><h3>User Accounts</h3></div>
-<div class="text-danger" asp-validation-summary="ModelOnly"></div>
 
+<div class="text-danger" asp-validation-summary="ModelOnly"></div>
+<head>
+    <link rel="stylesheet" href="~/css/main.css" />
+
+</head>
 <p>
+    <a>User Accounts! </a>
     <a asp-action="Create">Create User, </a>
     <a asp-area="" asp-controller="Admin" asp-action="HandleSpotMe">Handle SpotMe</a>
 </p>

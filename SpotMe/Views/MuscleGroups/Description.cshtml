@@ -17,7 +17,7 @@
             <tr>
 
 
-                <th class="text-center">
+                <th class="text-center" >
                     @Html.DisplayFor(model => model.name)
 
                 </th>
@@ -31,7 +31,7 @@
 
 
 
-                <td>
+                <td  style="color:white">
                     @Html.DisplayFor(model => model.description)
                 </td>
 
@@ -40,7 +40,42 @@
             </tr>
             <tr>
                 <td>
-                    <a asp-action="Excercises" style="color:black" >Back to List</a>
+                    <a asp-action="Excercises" style="color:gray">Back to List</a>
+                    @if (User?.Identity?.IsAuthenticated ?? true)
+                    {
+                        <a asp-action="Description" style="color:white" asp-route-id="@Model.muscleGroupID"> @*@Html.DisplayFor(modelItem => Model.name)*@</a>
+                        <form id="@Model.muscleGroupID" asp-action="AddToRoutine"
+                              asp-controller="Routine" method="post">
+                            <input type="hidden" asp-for="@Model.muscleGroupID" />
+                            <input type="hidden" name="returnUrl"
+                                   value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                            <span class="card-text p-1">
+                                @*@item.description*@
+                                <button type="submit"
+                                        class="btn btn-success btn-sm pull-right" style="float:right">
+                                    Add to Routine
+                                </button>
+                            </span>
+                        </form>
+                    }
+                    else
+                    {
+                        @*<a asp-action="Description" style="color:white" asp-route-id="@item.muscleGroupID"> @Html.DisplayFor(modelItem => item.name)</a>*@
+                        <a asp-action="Description" style="color:white" asp-route-id="@Model.muscleGroupID"> @*@Html.DisplayFor(modelItem => Model.name)*@</a>
+                        <form id="@Model.muscleGroupID" asp-action="AddToRoutine"
+                              asp-controller="Routine" method="post">
+                            <input type="hidden" asp-for="@Model.muscleGroupID" />
+                            <input type="hidden" name="returnUrl"
+                                   value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                            <span class="card-text p-1">
+                                @*@item.description*@
+                                <button type="submit"
+                                        class="btn btn-success btn-sm pull-right" style="float:right">
+                                    Add to Routine
+                                </button>
+                            </span>
+                        </form>
+                    }
 
                 </td>
             </tr>

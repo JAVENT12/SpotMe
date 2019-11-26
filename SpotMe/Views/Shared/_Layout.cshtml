@@ -5,57 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SpotMe_</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link asp-href-include="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    @*<link rel="stylesheet" href="~/css/LUX.css" />*@
+    @*<link rel="stylesheet" href="~/css/SLATE.css" />*@
+    <link rel="stylesheet" href="~/css/darkly.css" />
+    @*<link rel="stylesheet" href="~/css/CYBORG.min.css" />*@
+
+    @*<link asp-href-include="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />*@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-white bg-dark box-light mb-3">
+
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SpotMe!</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button>          
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Faq">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignUp">Sign up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="LogIn">Log In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="WorkOuts" asp-action="MuscleGroup">WorkOuts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Routines">Routines</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                        @if (User?.Identity?.IsAuthenticated ?? true)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " style="color:lightseagreen"> Hello @User.Identity.Name!</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-green" asp-area="" asp-controller="Routine" asp-action="Index">Routines</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-green" asp-area="" asp-controller="Account" asp-action="Logout">
+                                    Logout
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item" style="color:white">
+                                <a class="nav-link text-green" asp-area="" asp-controller="Home" asp-action="SignUp">Sign up</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-green" asp-area="" asp-controller="Account" asp-action="LogIn">Log In</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-green" asp-area="" asp-controller="Routine" asp-action="Index">Routines</a>
+                            </li>
+                        }
 
 
+                        @*<li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignUp">Sign up</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="LogIn">Log In</a>
+        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link text-green" asp-area="" asp-controller="MuscleGroups" asp-action="muscleCategory">Exercises</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-green" asp-area="" asp-controller="Home" asp-action="Faq">FAQ</a>
+                        </li>
+                        <li>
 
                         </li>
+
+                        @*<li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+        </li>*@
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
+       
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer>
+    @*<footer class="footer-copyright text-left py-3 ">
         <div class="container">
-            &copy; 2019 - SpotMe_ - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2019 - SpotMe @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy
         </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

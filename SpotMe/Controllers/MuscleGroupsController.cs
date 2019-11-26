@@ -6,33 +6,83 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Identity.Models;
+using Identity.Models.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Identity.Infrastructure;
 
 
+
 namespace Identity
 {
+   // [RequireHttps]
     public class MuscleGroupsController : Controller
     {
         private readonly AppMuscleDbContext _context;
-       // private IMuscleGroupRepository
-
-
-
-
-
-
-        public MuscleGroupsController(AppMuscleDbContext context)
+        private IMuscleGroupRepository repository;
+        public int PageSize = 15;
+        
+        public MuscleGroupsController(AppMuscleDbContext context, IMuscleGroupRepository repos)
         {
             _context = context;
+            repository = repos;
         }
+
+        //public async Task<IActionResult> Excercises(int productPage = 1) =>  ///////Exercises!!!
+        //          View(await _context.MuscleGroup.ToListAsync()
+        //          );
+           public async Task<IActionResult> SeeAll() =>  ///////Exercises!!!
+                 View(await _context.MuscleGroup.ToListAsync()
+                  );
+
+        public ViewResult Excercises(string category,int productPage = 1)
+            => View(new MuscleGroupListViewModel
+            {
+                MuscleGroups = repository.MuscleGroups
+                .Where(p => category == null || p.muscleCategory == category)
+                .OrderBy(m => m.muscleGroupID)
+                .Skip((productPage - 1) * PageSize)
+                .Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = productPage,
+                    ItemsPerPage = PageSize,
+                    TotalItems = category == null ?
+                    repository.MuscleGroups.Count() :
+                    repository.MuscleGroups.Where(e =>
+                    e.muscleCategory == category).Count()
+                },
+                CurrentCategory = category
+            });
+
+        //repository.MuscleGroups
+
+
         [Authorize(Roles = "Admins")]
         // GET: MuscleGroups
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.MuscleGroup.ToListAsync());
-        }
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _context.MuscleGroup.ToListAsync());
+        //}
+
+        public ViewResult Index(int productPage = 1)
+           => View(new MuscleGroupListViewModel
+           {
+               MuscleGroups = repository.MuscleGroups
+               .OrderBy(m => m.muscleGroupID)
+               .Skip((productPage - 1) * PageSize)
+               .Take(PageSize),
+               PagingInfo = new PagingInfo
+               {
+                   CurrentPage = productPage,
+                   ItemsPerPage = PageSize,
+                   TotalItems = repository.MuscleGroups.Count()
+               }
+           });
+
+
+
+
         [Authorize(Roles = "Admins")]
         // GET: MuscleGroups/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -64,7 +114,7 @@ namespace Identity
         [Authorize(Roles = "Admins")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("muscleGroupID,WorkoutsID,name,description")] MuscleGroup muscleGroup)
+        public async Task<IActionResult> Create([Bind("muscleGroupID,WorkoutsID,name,description, muscleCategory")] MuscleGroup muscleGroup)
         {
             //AppMuscleDbContext db = new AppMuscleDbContext();
 
@@ -80,7 +130,7 @@ namespace Identity
             if (string.IsNullOrEmpty(muscleGroup.name))
             {
                 ModelState.AddModelError(nameof(muscleGroup.name),
-                "Please enter a muscle");
+                "Please enter a WorkOut");
             }
             //if (ModelState.GetFieldValidationState(nameof(muscleGroup.muscle))
             //    == ModelValidationState.Valid
@@ -117,7 +167,7 @@ namespace Identity
         [Authorize(Roles = "Admins")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("muscleGroupID,WorkoutsID,name,description")] MuscleGroup muscleGroup)
+        public async Task<IActionResult> Edit(int id, [Bind("muscleGroupID,WorkoutsID,name,description,muscleCategory")] MuscleGroup muscleGroup)
         {
             if (id != muscleGroup.muscleGroupID)
             {
@@ -175,10 +225,8 @@ namespace Identity
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        public async Task<IActionResult> Excercises()
-        {
-            return View(await _context.MuscleGroup.ToListAsync());
-        }
+       
+                     
         public async Task<IActionResult> Description(int? id)
         {
             if (id == null)
@@ -195,7 +243,40 @@ namespace Identity
 
             return View(muscleGroup);
         }
-
+        //public async Task<IActionResult> muscleCategory()
+        //{
+        //    return View(await _context.MuscleGroup.ToListAsync());
+        //}
+   //     public ViewResult muscleCategory(int productPage = 1)
+   //=> View(new MuscleGroupListViewModel
+   //{
+   //    MuscleGroups = repository.MuscleGroups
+   //    .OrderBy(m => m.muscleGroupID)
+   //    .Skip((productPage - 1) * PageSize)
+   //    .Take(PageSize),
+   //    PagingInfo = new PagingInfo
+   //    {
+   //        CurrentPage = productPage,
+   //        ItemsPerPage = PageSize,
+   //        TotalItems = repository.MuscleGroups.Count()
+   //    }
+   //});
+        public ViewResult muscleCategory(string category, int productPage = 1)
+        => View(new MuscleGroupListViewModel
+        {
+            MuscleGroups = repository.MuscleGroups
+            .Where(p => category == null || p.muscleCategory == category)
+            .OrderBy(m => m.muscleGroupID)
+            .Skip((productPage - 1) * PageSize)
+            .Take(PageSize),
+            PagingInfo = new PagingInfo
+            {
+                CurrentPage = productPage,
+                ItemsPerPage = PageSize,
+                TotalItems = repository.MuscleGroups.Count()
+            },
+            CurrentCategory = category
+        });
         private bool MuscleGroupExists(int id)
         {
             return _context.MuscleGroup.Any(e => e.muscleGroupID == id);

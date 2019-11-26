@@ -22,6 +22,39 @@ namespace Identity.Models
         [ForeignKey("MuscleGroup")]
         public int muscleGroupID { get; set; }
         public string details { get; set; }
+        public string UserName { get; set; }
 
+        private List<Regiment> workoutCollection = new List<Regiment>();
+
+        public virtual void AddExercise(MuscleGroup muscleGroup, int quantity)
+        {
+            Regiment line = workoutCollection
+            .Where(m => m.MuscleGroup.muscleGroupID == muscleGroup.muscleGroupID)
+            .FirstOrDefault();
+
+            if(line == null)
+            {
+                workoutCollection.Add(new Regiment
+                {
+                    MuscleGroup = muscleGroup,
+                    Quantity = quantity
+                });
+            }
+            else
+            {
+                line.Quantity += quantity;
+            }
+        }
+        public virtual void RemoveLine(MuscleGroup muscleGroup) =>
+            workoutCollection.RemoveAll(l => l.MuscleGroup.muscleGroupID == muscleGroup.muscleGroupID);
+            public virtual void Clear() => workoutCollection.Clear();
+        public virtual IEnumerable<Regiment> Lines => workoutCollection;
+
+    }
+    public class Regiment
+    {
+        public int RegimentID { get; set; }
+        public MuscleGroup MuscleGroup { get; set; }
+        public int Quantity { get; set; }
     }
 }
